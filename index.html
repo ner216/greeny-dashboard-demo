@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>Greeny</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -10,48 +10,53 @@
     <header class="site-header">
         <span class="top-bar">
             <div class="logo-icon">&#129388</div>
-            <div class="logo-text">Greeny</div>
+            <div class="brand-logo">Greeny</div>
+        </span>
+        <span class="top-bar">
             <p class="bar-indicator">Events:</p>
-            <p class="bar-value">0</p>
+            <p class="bar-value" id="bar-value">0</p>
         </span>
     </header>
     <main>
         <section class="control-bar">
             <h2 class="control-bar-title">Log List</h2>
             <span class="control-buttons">
-                <button class="btn btn-primary">New Log</button>
-                <button class="btn btn-secondary">Clear Logs</button>
+                <button class="btn btn-primary" id="new-log-button">New Log</button>
+                <button class="btn btn-secondary" id="clear-logs-button">Clear Logs</button>
             </span>
         </section>
         <section id="log-entry-grid" class="log-entry-grid">
             <!-- Dynamic html injected log objects -->
         </section>
-        <div class="log-entry-modal">
+        <div id="empty-state" class="empty-state">
+            <span class="empty-message">Nothing to show here <span class="empty-message-icon">&#129393</span></span>
+        </div>
+        <div class="log-entry-modal" id="log-entry-modal">
             <h3 class="log-entry-title">New Event</h3>
             <form action="#" method="post" class="log-form">
                 <div class="form-group">
-                    <label for="bay-id">Bay ID</label>
-                    <input type="text" id="bay-id" name="bay-id" placeholder="EX: Bay 2342" required>
+                    <label for="bay-id" class="form-label">Bay ID</label>
+                    <input type="text" id="bay-id" name="bay-id" class="form-control" placeholder="EX: Bay 2342" required>
                 </div>
                 <div class="form-group">
-                    <label for="ph-input">pH Level (0.00 -- 14.00)</label>
-                    <input type="number" id="ph-input" name="ph-input" placeholder="7.00" min="0" max="14" step="0.1" required>
+                    <label for="ph-input" class="form-label">pH Level (0.00 -- 14.00)</label>
+                    <input type="number" id="ph-input" name="ph-input" class="form-control" placeholder="7.00" min="0" max="14" step="0.1" required>
                 </div>
                 <div class="form-group">
-                    <label for="temp-input">Bay Air Tempurature (F)</label>
-                    <input type="number" id="temp-input" name="temp-input" placeholder="85.0" min="-200.0" max="212.0" step="0.1" required>
+                    <label for="temp-input" class="form-label">Bay Air Tempurature (F)</label>
+                    <input type="number" id="temp-input" name="temp-input" class="form-control" placeholder="85.0" min="-200.0" max="212.0" step="0.1" required>
                 </div>
                 <div class="form-group">
-                    <label for="ec-input">EC (mS/cm)</label>
-                    <input type="number" id="ec-input" name="ec-input" placeholder="1.00" min="0" max="10" step="0.01" required>
+                    <label for="ec-input" class="form-label">EC (mS/cm)</label>
+                    <input type="number" id="ec-input" name="ec-input" class="form-control" placeholder="1.00" min="0" max="10" step="0.01" required>
                 </div>
                 <div class="form-group">
-                    <label for="rh-input">Humidity (% RH)</label>
-                    <input type="number" id="rh-input" name="rh-input" placeholder="60.0" min="0" max="100" step="0.1" required>
+                    <label for="rh-input" class="form-label">Humidity (% RH)</label>
+                    <input type="number" id="rh-input" name="rh-input" class="form-control" placeholder="60.0" min="0" max="100" step="0.1" required>
                 </div>
                 <span class="log-entry-controls">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="Cancel" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-blob" id="submit-log-button">Submit</button>
+                    <button type="Cancel" class="btn btn-secondary btn-blob" id="cancel-log-button">Cancel</button>
                 </span>
             </form>
         </div>
