@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>Greeny</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="app.js"></script>
 </head>
 <body>
     <header class="site-header">
@@ -25,15 +26,16 @@
                 <button class="btn btn-secondary" id="clear-logs-button">Clear Logs</button>
             </span>
         </section>
-        <section id="log-entry-grid" class="log-entry-grid">
+        <section id="log-entry-panel" class="log-entry-panel">
             <!-- Dynamic html injected log objects -->
+            <ul id="log-entry-list" class="log-entry-list" aria-live="polite"></ul>
         </section>
         <div id="empty-state" class="empty-state">
             <span class="empty-message">Nothing to show here <span class="empty-message-icon">&#129393</span></span>
         </div>
         <div class="log-entry-modal" id="log-entry-modal">
             <h3 class="log-entry-title">New Event</h3>
-            <form action="#" method="post" class="log-form">
+            <form action="#" method="post" class="log-form" id="log-form">
                 <div class="form-group">
                     <label for="bay-id" class="form-label">Bay ID</label>
                     <input type="text" id="bay-id" name="bay-id" class="form-control" placeholder="EX: Bay 2342" required>
