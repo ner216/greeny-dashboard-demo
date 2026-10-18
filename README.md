@@ -1,6 +1,8 @@
 # web-dashboard-demo
 A undergrad web design project to create a dashboard web application. I chose to use the hypothetical company 'Greeny'.
 
+![Web App Dashboard Image](assets/Greeny-image.png)
+
 ## Assignment 2A
 
 ### Don Norman Less-than-equal-4-click User Journey Funnel
