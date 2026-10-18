@@ -8,32 +8,8 @@
     <script src="app.js"></script>
 </head>
 <body>
-    <header class="site-header">
-        <span class="top-bar">
-            <div class="logo-icon">&#129388</div>
-            <div class="brand-logo">Greeny</div>
-        </span>
-        <span class="top-bar">
-            <p class="bar-indicator">Events:</p>
-            <p class="bar-value" id="bar-value">0</p>
-        </span>
-    </header>
-    <main>
-        <section class="control-bar">
-            <h2 class="control-bar-title">Log List</h2>
-            <span class="control-buttons">
-                <button class="btn btn-primary" id="new-log-button">New Log</button>
-                <button class="btn btn-secondary" id="clear-logs-button">Clear Logs</button>
-            </span>
-        </section>
-        <section id="log-entry-panel" class="log-entry-panel">
-            <!-- Dynamic html injected log objects -->
-            <ul id="log-entry-list" class="log-entry-list" aria-live="polite"></ul>
-        </section>
-        <div id="empty-state" class="empty-state">
-            <span class="empty-message">Nothing to show here <span class="empty-message-icon">&#129393</span></span>
-        </div>
-        <div class="log-entry-modal" id="log-entry-modal">
+    <div class="log-entry-modal" id="log-entry-modal">
+        <div class="modal-content">
             <h3 class="log-entry-title">New Event</h3>
             <form action="#" method="post" class="log-form" id="log-form">
                 <div class="form-group">
@@ -61,6 +37,39 @@
                     <button type="Cancel" class="btn btn-secondary btn-blob" id="cancel-log-button">Cancel</button>
                 </span>
             </form>
+        </div>
+    </div>
+    <div class="error-message-modal" id="error-message-modal">
+        <div class="error-message-content">
+            <h3 class="error-message-header">Error</h3>
+            <p class="error-message-text" id="error-message-text">Unknown Error</p>
+            <button class="btn btn-secondary" id="error-message-close">Ok</button>
+        </div>
+    </div>
+    <header class="site-header">
+        <span class="top-bar">
+            <div class="logo-icon">&#129388</div>
+            <div class="brand-logo">Greeny</div>
+        </span>
+        <span class="top-bar">
+            <p class="bar-indicator">Events:</p>
+            <p class="bar-value" id="bar-value">0</p>
+        </span>
+    </header>
+    <main>
+        <section class="control-bar">
+            <h2 class="control-bar-title">Log List</h2>
+            <span class="control-buttons">
+                <button class="btn btn-primary" id="new-log-button">New Log</button>
+                <button class="btn btn-secondary" id="clear-logs-button">Clear Logs</button>
+            </span>
+        </section>
+        <section id="log-entry-panel" class="log-entry-panel">
+            <!-- Dynamic html injected log objects -->
+            <ul id="log-entry-list" class="log-entry-list" aria-live="polite"></ul>
+        </section>
+        <div id="empty-state" class="empty-state">
+            <span class="empty-message">Nothing to show here <span class="empty-message-icon">&#129393</span></span>
         </div>
     </main>
 </body>
